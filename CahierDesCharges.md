@@ -9,13 +9,15 @@ Le Scope est une application web interactive destinée à recenser et mettre en 
 ## Différents types d'utilisation
 
 * **Visiteur (Non connecté) :** Peut naviguer sur les différents onglets, chercher des artistes, utiliser les filtres et consulter la carte.
-* **Membre (Connecté) :** Possède un compte. Peut ajouter des artistes à sa liste personnelle (le "Scopedex") et attribuer des "Likes" pour influencer la mise en avant des artistes. *Pour créer une page artiste, il faut également se connecter pour pouvoir remplir un formulaire. (Secondaire)*
+* **Membre (Connecté) :** Possède un compte. Peut ajouter des artistes à sa liste personnelle (le "Scopedex") et attribuer des "Likes" pour influencer la mise en avant des artistes. *Pour créer une page artiste, il faut également se connecter pour pouvoir remplir un formulaire.*
 * **Administrateur :** Possède des droits étendus. Reçoit les soumissions du formulaire des artistes, les analyse, et approuve ou rejette leur publication sur le site. Reçoit une notification lorsqu'une page artiste est mise à jour.
 
 ## Pages et fonctionnalités
 
 * **Menu bandeau :** Donne accès aux différentes pages du site. Point d'accès pour s'inscrire ou se connecter à son compte.
 * **Page d'accueil :** Met en avant le nom du site et les différentes pages disponibles. Possède une grande barre de recherche pour rechercher un artiste.
+*  **Page de Recherche :** Permet d'effectuer des recherches précises grâce à une barre de recherche et des filtres spécifique.
+*   **Page artiste :** Présente les informations précises d'un.e artiste.
 * **Page Musique :** Page de découverte mettant en avant les genres musicaux présents en Suisse romande. Affichage dynamique des artistes les plus populaires (basé sur le nombre de Likes des utilisateurs). Donne accès aux différentes pages spécifiques à chaque style de musique.
 * **Page Map :** Une carte interactive affichant la provenance des artistes enregistrés en fonction de leur code postal/région. Donne accès aux différentes pages spécifiques par région.
 * **Page Métiers :** Un annuaire classé par catégories professionnelles (ex: Musiciens, Vidéastes, Graphistes, Beatmakers) pour faciliter la recherche de collaborateurs dans le milieu musical. Donne accès aux différentes pages spécifiques par métier.
@@ -26,8 +28,11 @@ Le Scope est une application web interactive destinée à recenser et mettre en 
     * *Localisation :* Région, Code postal.
     * *Contact & Liens :* Email de contact, Liens vers les plateformes de streaming (Spotify, Apple Music, etc.).
     * *Réseaux Sociaux :* Liens vers Instagram, Facebook, TikTok, YouTube.
+    *  **Page formulaire modification de page artiste :** Cette page propose aux utilisateurs de changer les éléments présent sur leur page d'artiste
 * **Page de connexion ou inscription :** Inscription et connexion via un formulaire standard (Nom d'utilisateur, Email, Mot de passe).
-* **Pages Membre :** Une fois connecté, le membre a accès à sa page "Likes" (les artistes qu'il a likés) et "Scopedex" (les artistes qu'il a enregistrés). *(Secondaire)*
+* **Pages Membre :** Une fois connecté, le membre a accès à sa page "Likes" (les artistes qu'il a likés) et "Scopedex" (les artistes qu'il a enregistrés).
+* **Page favoris :** Fonctionne comme une page supplémentaire auquel les utilisateurs enregistrés ont accès, elle présente les artistes que l'utilisateur a liker/enregistrer dans ses favoris.
+* **Page contact :** Cette page donne les contacts disponible des modérateurs du site, ainsi qu'une jolie photo.
 
 ## Moyens de recherche
 
@@ -37,10 +42,15 @@ Le Scope est une application web interactive destinée à recenser et mettre en 
 ## Fonctionnalités générales
 
 **Indispensables :**
+* Création du compte pour pouvoir accéder à chacune des fonctionnalités
 * Rechercher des artistes par nom ou filtre.
 * Ajouter des pages artistes.
 * Modifier sa page artiste.
 * L'administrateur doit accepter la publication de la page.
 
-**Secondaires :**
-* Création de compte, possibilité de liker les pages artistes et de les enregistrer.
+**Fonctionnalités du compte :**
+* Ajouter des pages artistes.
+* Modifier sa page artiste
+* Modifier une page artiste.
+* Accès aux contacts
+* Liste d'artistes favoris.
