@@ -54,3 +54,6 @@ Le Scope est une application web interactive destinée à recenser et mettre en 
 * Modifier une page artiste.
 * Accès aux contacts
 * Liste d'artistes favoris.
+
+## Lien Maquette Figma :
+https://www.figma.com/design/7HT2EGw87xnV7Yw5yauOT8/Maquette_LE-SCOPE?node-id=0-1&t=tTIJpuQIzi6ydbbc-1
