@@ -9,7 +9,7 @@ $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";c
 
 $pdo = new PDO($dsn, DB_USER, DB_PASSWORD);
 
-$sql = "SELECT * FROM my_table";
+$sql = "SELECT * FROM canton ORDER BY id";
 
 $stmt = $pdo->prepare($sql);
 
@@ -34,16 +34,11 @@ $results = $stmt->fetchAll();
 
     <h2>Résultats de la base de données :</h2>
 
-    <ul>
-        <?php foreach ($results as $row) { ?>
-            <li>ID: <?= htmlspecialchars($row['id']) ?>
-                <ul>
-                    <li>Column1: <?= htmlspecialchars($row['column1']) ?></li>
-                    <li>Column2: <?= htmlspecialchars($row['column2']) ?></li>
-                </ul>
-            </li>
-        <?php } ?>
-    </ul>
+   <ul>
+    <?php foreach ($results as $row) { ?>
+        <li>ID: <?= htmlspecialchars($row['id']) ?> - <?= htmlspecialchars($row['nom']) ?></li>
+    <?php } ?>
+</ul>
 </body>
 
 </html>
