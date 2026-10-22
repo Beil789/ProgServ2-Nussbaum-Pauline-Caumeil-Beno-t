@@ -1,13 +1,9 @@
 <?php
-const DB_HOST = 'mariadb';
-const DB_PORT = 3306;
-const DB_NAME = 'my_database';
-const DB_USER = 'username';
-const DB_PASSWORD = 'password';
+$config = parse_ini_file(__DIR__ . '/../src/config/database.ini');
 
-$dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4";
+$dsn = "mysql:host=" . $config['host'] . ";port=" . $config['port'] . ";dbname=" . $config['database'] . ";charset=utf8mb4";
 
-$pdo = new PDO($dsn, DB_USER, DB_PASSWORD);
+$pdo = new PDO($dsn, $config['username'], $config['password']);
 
 $sql = "SELECT * FROM canton ORDER BY id";
 
@@ -34,11 +30,11 @@ $results = $stmt->fetchAll();
 
     <h2>Résultats de la base de données :</h2>
 
-   <ul>
-    <?php foreach ($results as $row) { ?>
-        <li>ID: <?= htmlspecialchars($row['id']) ?> - <?= htmlspecialchars($row['nom']) ?></li>
-    <?php } ?>
-</ul>
+    <ul>
+        <?php foreach ($results as $row) { ?>
+            <li>ID: <?= htmlspecialchars($row['id']) ?> - <?= htmlspecialchars($row['nom']) ?></li>
+        <?php } ?>
+    </ul>
 </body>
 
 </html>
