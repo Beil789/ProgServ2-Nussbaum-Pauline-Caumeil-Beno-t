@@ -1,5 +1,5 @@
 <?php
-// --- 1. LOGIQUE PHP (Traitement du formulaire) ---
+
 require_once '../src/config/database.php';
 require_once 'modele/GestionnaireBD.php';
 
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['mot_de_passe'] ?? '';
 
-    // Validations
+    
 if (strlen($username) < 2 || strlen($username) > 30) {
     $erreurs[] = "Le nom d'utilisateur doit contenir entre 2 et 30 caractères.";
 }
@@ -24,11 +24,11 @@ if (strlen($username) < 2 || strlen($username) > 30) {
         $erreurs[] = "Le mot de passe doit faire au moins 8 caractères.";
     }
 
-    // Si tout est bon, on inscrit l'utilisateur
+  
     if (empty($erreurs)) {
         $motDePasseHache = password_hash($password, PASSWORD_DEFAULT);
 
-        // On instancie l'objet User sans le username
+        // On instancie l'objet User 
         $nouvelUser = new User([
             'username' => $username,
             'email' => $email,
@@ -39,7 +39,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
 
         if ($newId > 0) {
             $messageSucces = "Compte créé avec succès ! Vous pouvez maintenant vous connecter.";
-            // Optionnel : header('Location: login.php'); exit;
+          
         } else {
             $erreurs[] = "Une erreur est survenue lors de la création du compte.";
         }
@@ -54,15 +54,15 @@ if (strlen($username) < 2 || strlen($username) > 30) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S'inscrire - Le Scope</title>
     <style>
-        /* --- 2. CSS RÉUTILISABLE (À mettre dans un style.css) --- */
+  
         
         :root {
             --bg-color: #000000;
-            --card-bg: #151515; /* Gris très foncé pour la carte */
+            --card-bg: #151515;
             --text-main: #ffffff;
-            --input-bg: #e6e6e6; /* Gris clair pour les champs */
+            --input-bg: #e6e6e6; 
             --input-text: #333333;
-            --btn-bg: #74a89c; /* Vert d'eau du bouton */
+            --btn-bg: #74a89c; 
             --btn-hover: #5d8b80;
             --error-color: #ff6b6b;
             --success-color: #51cf66;
@@ -85,7 +85,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
             min-height: 100vh;
         }
 
-        /* Classes de structure (Composants) */
+        
         .auth-container {
             width: 100%;
             max-width: 500px;
@@ -118,7 +118,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
             font-weight: bold;
         }
 
-        /* Classes de formulaire */
+       
         .form-group {
             margin-bottom: 20px;
         }
@@ -126,7 +126,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
         .form-control {
             width: 100%;
             padding: 15px 20px;
-            border-radius: 30px; /* Bords très arrondis comme la maquette */
+            border-radius: 30px; 
             border: none;
             background-color: var(--input-bg);
             color: var(--input-text);
@@ -186,12 +186,12 @@ if (strlen($username) < 2 || strlen($username) > 30) {
 </head>
 <body>
 
-    <!-- --- 3. STRUCTURE HTML --- -->
+
     <div class="auth-container">
         <div class="auth-card">
             
             <div class="auth-header">
-                <!-- Flèche de retour (utiliser un vrai SVG ou icône plus tard) -->
+                
                 <a href="index.php" class="back-btn">&larr;</a>
                 <h1 class="auth-title">S'inscrire</h1>
             </div>
@@ -211,7 +211,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
                 </div>
             <?php endif; ?>
 
-            <!-- Formulaire -->
+     
             <form action="inscription.php" method="POST">
 
               <div class="form-group">
