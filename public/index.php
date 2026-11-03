@@ -33,7 +33,9 @@ $results = $stmt->fetchAll();
             <li><a href="map.php">Map</a></li>
         </ul>
     </nav>
-    <button class="button" type="button">Se connecter</button>
+    <button class="button" type="button">Se connecter</button><br>
+    <a href="inscription.php" class="button">S'inscrire </a>
+    
     </header>
     <main>
         <div class="hero">

@@ -27,12 +27,14 @@ CREATE TABLE genre (
 
 CREATE TABLE utilisateur (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) UNIQUE NOT NULL,
     email VARCHAR(150) UNIQUE NOT NULL,
     mot_de_passe VARCHAR(255) NOT NULL,
     date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     id_role INT NOT NULL,
     FOREIGN KEY (id_role) REFERENCES role (id),
     CONSTRAINT chk_email CHECK (email LIKE '%@%')
+    
 );
 
 CREATE TABLE artiste (
