@@ -53,7 +53,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S'inscrire - Le Scope</title>
- <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
