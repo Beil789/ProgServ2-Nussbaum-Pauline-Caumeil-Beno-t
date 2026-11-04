@@ -21,18 +21,11 @@ $results = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Scope</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header>
-        <a class ="logo" href="index.php"><img src="images/logo.png" alt="Logo"></a>
-         <nav>
-        <ul>
-            <li><a href="genre.php">Genre</a></li> <!-- Création des pages genre métiers et map à faire encore -->
-            <li><a href="metiers.php">Métiers</a></li>
-            <li><a href="map.php">Map</a></li>
-        </ul>
+ <?php include 'view/headerViewer.php'; ?>
     </nav>
     <button class="button" type="button">Se connecter</button><br>
     <a href="inscription.php" class="button">S'inscrire </a>
@@ -70,24 +63,8 @@ $results = $stmt->fetchAll();
     <img src="images/map.png" alt="Carte de la Suisse romande"> <!-- Image de la carte de la suisse à ajouter ici -->
 </section>
     </main>
-    <footer>
-        <span>Projet réalisé par Benoît Caumeil et Pauline Nussbaum dans le cadre du cours ProgServ2 à la HEIG-VD</span>
-        <span class="langues">
-            <a href="index.php" aria-current="true">FR</a>
-            <a href="index.php">EN</a>
-        </span>
-    </footer>
-    <h1>ProgServ2 Course PHP Template</h1>
 
-    <p>Bienvenue dans votre projet PHP pour le cours ProgServ2 à la HEIG-VD !</p>
-
-    <h2>Résultats de la base de données :</h2>
-
-    <ul>
-        <?php foreach ($results as $row) { ?>
-            <li>ID: <?= htmlspecialchars($row['id']) ?> - <?= htmlspecialchars($row['nom']) ?></li>
-        <?php } ?>
-    </ul>
+    <?php include 'view/footer.php'; ?>
 </body>
 
 </html>
