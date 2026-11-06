@@ -1,0 +1,72 @@
+/* --- PAGE CONTACT --- */
+
+/* Le conteneur principal prend tout l'espace pour garder le footer en bas */
+.main-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px; /* Limite la largeur pour que ce ne soit pas trop étiré sur grand écran */
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Titre principal centré */
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+/* Disposition en deux colonnes */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligne le texte et l'image verticalement */
+    gap: 40px; /* Espace entre le texte et l'image */
+}
+
+/* Style de la colonne texte */
+.contact-text {
+    flex: 1; /* Prend la moitié de l'espace */
+}
+
+.contact-text h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.contact-text h2:first-child {
+    margin-top: 0;
+}
+
+.contact-text p, .contact-text .team-member {
+    font-size: 16px;
+    line-height: 1.5; /* Aère un peu les lignes */
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.contact-text a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact-text a:hover {
+    text-decoration: underline;
+}
+
+/* Style de la colonne image */
+.contact-image {
+    flex: 1; /* Prend l'autre moitié de l'espace */
+    display: flex;
+    justify-content: flex-end; /* Pousse l'image vers la droite */
+}
+
+/* Style de l'image elle-même (bords arrondis comme sur la maquette) */
+.team-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px; /* Bords arrondis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Petite ombre optionnelle */
+}
