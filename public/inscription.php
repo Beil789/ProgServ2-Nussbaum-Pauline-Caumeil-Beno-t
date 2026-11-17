@@ -56,7 +56,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+ <?php include 'view/headerViewer.php'; ?>
 
     <div class="auth-container">
         <div class="auth-card">
@@ -102,6 +102,6 @@ if (strlen($username) < 2 || strlen($username) > 30) {
 
         </div>
     </div>
-
+ <?php include 'view/footer.php'; ?>
 </body>
 </html>
