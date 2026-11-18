@@ -16,6 +16,6 @@
 
 
     <div class="header-auth">
-        <a href="connection.php" class="btn-connect">Se connecter</a>
+        <a href="connexion.php" class="btn-connect">Se connecter</a>
     </div>
 </header>

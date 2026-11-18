@@ -74,7 +74,7 @@ class GestionnaireBD {
      // Récupère la liste de tous les cantons (triés par ordre alphabétique)
     
     public function getCantons(): array {
-        $sql = "SELECT * FROM CANTON ORDER BY nom ASC";
+        $sql = "SELECT * FROM canton ORDER BY nom ASC";
         $stmt = $this->db->query($sql);
         
         $cantons = [];
@@ -86,7 +86,7 @@ class GestionnaireBD {
 
     //Récupère la liste de tous les métiers disponibles
     public function getMetiers(): array {
-        $sql = "SELECT * FROM METIER ORDER BY nom ASC";
+        $sql = "SELECT * FROM metier ORDER BY nom ASC";
         $stmt = $this->db->query($sql);
         
         $metiers = [];
@@ -97,9 +97,9 @@ class GestionnaireBD {
     }
 
     
-     //Récupère la liste de tous les genres musicaux
+ // Récupère la liste de tous les genres musicaux
     public function getGenres(): array {
-        $sql = "SELECT * FROM GENRE ORDER BY nom ASC";
+        $sql = "SELECT * FROM genre ORDER BY nom ASC"; 
         $stmt = $this->db->query($sql);
         
         $genres = [];

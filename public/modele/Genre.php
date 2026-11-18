@@ -11,7 +11,7 @@ class Genre {
     }
 
     public function hydrate(array $data): void {
-        if (isset($data['id_genre'])) $this->setIdGenre((int) $data['id_genre']);
+        if (isset($data['id'])) $this->setIdGenre((int) $data['id']);
         if (isset($data['nom'])) $this->setNom($data['nom']);
     }
 
