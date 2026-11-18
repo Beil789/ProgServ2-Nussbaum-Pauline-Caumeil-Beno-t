@@ -11,10 +11,9 @@ class Metier {
         }
     }
 
-    public function hydrate(array $data): void {
-        if (isset($data['id_metier'])) $this->setIdMetier((int) $data['id_metier']);
+  public function hydrate(array $data): void {
+        if (isset($data['id'])) $this->setIdMetier((int) $data['id']);
         if (isset($data['nom'])) $this->setNom($data['nom']);
-    
     }
 
     public function getIdMetier(): ?int { return $this->id_metier; }
