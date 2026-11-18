@@ -52,6 +52,17 @@ public function getUserParId(int $id): ?User {
     return $data ? new User($data) : null;
 }
 
+// Supprime un utilisateur.
+public function deleteUser(int $id): bool {
+    $sql = "DELETE FROM utilisateur WHERE id = :id";
+
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->rowCount() > 0;
+}
+
 
     public function createArtiste(Artiste $artiste): int {
         $sql = "INSERT INTO ARTISTE (
