@@ -44,7 +44,7 @@ $results = $stmt->fetchAll();
         <section id="genre">
             <h2>Genres</h2>
             <div class="carrousel">
-                <a class="page_rock" href="index.php">Rock</a>
+                <a class="page_rock" href="recherche.php">Rock</a>
                 <a class="page_urbain" href="index.php">Urbain</a>
                 <a class="page_pop" href="index.php">Pop</a>
                 <a class="page_jazz" href="index.php">Jazz</a>

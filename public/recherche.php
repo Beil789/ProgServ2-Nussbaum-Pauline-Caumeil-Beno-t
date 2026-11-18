@@ -248,6 +248,5 @@ $genreLabels = [
         <span>Projet réalisé par Benoît Caumeil et Pauline Nussbaum dans le cadre du cours ProgServ2 à la HEIG-VD</span>
         <span class="language-links"><a href="recherche.php" aria-current="page">FR</a><a href="recherche.php">EN</a></span>
     </footer>
-
 </body>
 </html>

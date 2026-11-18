@@ -36,6 +36,23 @@ class GestionnaireBD {
         return 0; // 0 signifie que l'insertion a échoué
     }
 
+
+public function getUserParId(int $id): ?User {
+    $sql = "SELECT u.id, u.username, u.email, u.date_creation, u.id_role, r.nom AS role
+            FROM utilisateur u
+            JOIN role r ON r.id = u.id_role
+            WHERE u.id = :id";
+
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $data ? new User($data) : null;
+}
+
+
     public function createArtiste(Artiste $artiste): int {
         $sql = "INSERT INTO ARTISTE (
                     nom, email_contact, description, photo, npa, localite, 
@@ -108,5 +125,7 @@ class GestionnaireBD {
         }
         return $genres;
     }
+
+
 
 }

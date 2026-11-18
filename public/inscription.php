@@ -86,7 +86,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
             <form action="inscription.php" method="POST">
 
               <div class="form-group">
-                    <input type="usernam" name="username" id="username" class="form-control" placeholder="Nom d'utilisateur·rice" required value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
+                    <input type="username" name="username" id="username" class="form-control" placeholder="Nom d'utilisateur·rice" required value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
                 </div>
                 
                 <div class="form-group">
