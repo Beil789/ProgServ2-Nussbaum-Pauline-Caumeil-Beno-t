@@ -19,6 +19,7 @@ $metiers = $gestionnaire->getMetiers();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Scope</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/accueilstyle.css">
 </head>
 <body>
     <?php include 'view/headerViewer.php'; ?>
@@ -53,13 +54,12 @@ $metiers = $gestionnaire->getMetiers();
                     </a>
                 <?php endforeach; ?>
             </div>
-    
+    </section>
   
 <section id="map">
     <h2>Map</h2>
 
-
-    <svg width="418" height="330" viewBox="0 0 418 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="18 75 223 213" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_167_917)">
 
             <!-- 1. JURA (ID: 1) -->

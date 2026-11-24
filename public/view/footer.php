@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/sytles.css">
+<link rel="stylesheet" href="css/footerstyle.css">
 <footer class="site-footer">
     <div class="footer-content">
         <p>Projet réalisé par Benoît Caumeil et Pauline Nussbaum dans le cadre du cours ProgServ2 à la HEIG-VD</p>   

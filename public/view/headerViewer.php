@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/headerviewerstyle.css">
 <header class="site-header">
  
     <div class="header-logo">
@@ -16,6 +18,6 @@
 
 
     <div class="header-auth">
-        <a href="connexion.php" class="btn-connect">Se connecter</a>
+        <a href="inscription.php" class="btn-connect">Se Connecter</a>
     </div>
 </header>
