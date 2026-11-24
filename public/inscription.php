@@ -1,9 +1,9 @@
 <?php
 
 require_once '../src/config/database.php';
-require_once 'modele/GestionnaireBD.php';
+require_once '../src/repositories/UserRepository.php';
 
-$gestionnaire = new GestionnaireBD($bdd);
+$userRepo = new UserRepository($bdd);
 $erreurs = [];
 $messageSucces = "";
 
@@ -12,34 +12,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['mot_de_passe'] ?? '';
 
-    
-if (strlen($username) < 2 || strlen($username) > 30) {
-    $erreurs[] = "Le nom d'utilisateur doit contenir entre 2 et 30 caractères.";
-}
+    if (strlen($username) < 2 || strlen($username) > 30) {
+        $erreurs[] = "Le nom d'utilisateur doit contenir entre 2 et 30 caractères.";
+    }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $erreurs[] = "L'adresse email n'est pas valide.";
     }
+
     if (strlen($password) < 8) {
         $erreurs[] = "Le mot de passe doit faire au moins 8 caractères.";
     }
 
-  
+    // Vérification des doublons uniquement si le format des champs est déjà valide
     if (empty($erreurs)) {
-        $motDePasseHache = password_hash($password, PASSWORD_DEFAULT);
+        if ($userRepo->existsByUsername($username)) {
+            $erreurs[] = "Ce nom d'utilisateur est déjà pris.";
+        }
+        if ($userRepo->existsByEmail($email)) {
+            $erreurs[] = "Cette adresse email est déjà utilisée.";
+        }
+    }
 
-        // On instancie l'objet User 
+    if (empty($erreurs)) {
         $nouvelUser = new User([
-            'username' => $username,
-            'email' => $email,
-            'mot_de_passe' => $motDePasseHache
+            'username'     => $username,
+            'email'        => $email,
+            'mot_de_passe' => password_hash($password, PASSWORD_DEFAULT),
         ]);
 
-        $newId = $gestionnaire->createUser($nouvelUser);
+        $newId = $userRepo->create($nouvelUser);
 
         if ($newId > 0) {
             $messageSucces = "Compte créé avec succès ! Vous pouvez maintenant vous connecter.";
-          
         } else {
             $erreurs[] = "Une erreur est survenue lors de la création du compte.";
         }

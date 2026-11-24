@@ -1,7 +1,7 @@
 <?php
 
-class Role {
-    private ?int $id_role = null;
+class Statut {
+    private ?int $id_statut = null;
     private string $nom;
 
     public function __construct(array $data = []) {
@@ -11,12 +11,12 @@ class Role {
     }
 
     public function hydrate(array $data): void {
-        if (isset($data['id_role'])) $this->setIdRole((int) $data['id_role']);
+        if (isset($data['id'])) $this->setIdStatut((int) $data['id']);
         if (isset($data['nom'])) $this->setNom($data['nom']);
     }
 
-    public function getIdRole(): ?int { return $this->id_role; }
-    public function setIdRole(int $id_role): void { $this->id_role = $id_role; }
+    public function getIdStatut(): ?int { return $this->id_statut; }
+    public function setIdStatut(int $id_statut): void { $this->id_statut = $id_statut; }
 
     public function getNom(): string { return $this->nom; }
     public function setNom(string $nom): void { $this->nom = $nom; }
