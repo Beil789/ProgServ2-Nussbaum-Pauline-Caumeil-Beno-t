@@ -1,0 +1,221 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-lg) var(--page-padding);
+    text-align: center;
+
+
+    background:
+        url('../img/hero-scope.jpg') center / cover no-repeat,
+        radial-gradient(ellipse at 70% 35%, rgba(112, 75, 145, 0.75), transparent 55%),
+        radial-gradient(ellipse at 20% 70%, rgba(60, 90, 160, 0.55), transparent 55%),
+        #07070f;
+}
+
+.hero h1 {
+    margin-bottom: var(--space-md);
+    font-size: clamp(64px, 14vw, 140px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--text-main);
+}
+
+.hero p {
+    max-width: 540px;
+    margin-bottom: var(--space-lg);
+    color: var(--text-main);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* ---------- Barre de recherche ---------- */
+.recherche {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.recherche input {
+    display: block;
+    width: 100%;
+    padding: 14px 56px 14px 28px;
+    border: none;
+    border-radius: var(--radius-pill);
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    font-family: var(--font-body);
+    font-size: 15px;
+
+    /* Loupe à droite */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M21 21l-4.3-4.3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 24px center;
+}
+
+.recherche input::placeholder {
+    color: var(--input-placeholder);
+    font-size: 13px;
+}
+
+/* =========================================
+   2. SECTIONS (genre, métiers, map)
+========================================= */
+#genre,
+#metiers {
+    padding-left: var(--page-padding);
+}
+
+#genre h2,
+#metiers h2, 
+#map {
+    margin-bottom: var(--space-md);
+}
+
+/* =========================================
+   3. CARROUSELS
+========================================= */
+.carrousel {
+    display: flex;
+    gap: var(--space-md);
+    overflow-x: auto;
+    padding: 0 var(--page-padding) 15px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) transparent;
+}
+
+.carrousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carrousel::-webkit-scrollbar-thumb {
+    background-color: var(--purple);
+    border-radius: 10px;
+}
+
+/* ---------- Cartes genre et métier ---------- */
+.carte_genre,
+.carte_metier {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex: 0 0 180px;
+    align-items: center;
+    justify-content: center;
+    height: 175px;
+    padding: var(--space-xs);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background-color: var(--panel-bg);
+    scroll-snap-align: start;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.1;
+    transition: transform var(--transition);
+}
+
+
+.carte_genre::before,
+.carte_metier::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--img, none);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter var(--transition);
+}
+
+.carte_genre:hover,
+.carte_metier:hover {
+    transform: scale(1.03);
+}
+
+.carte_genre:hover::before,
+.carte_metier:hover::before {
+    filter: grayscale(0%);
+}
+
+/* Couleurs du texte (cycle de 4, comme sur la maquette) */
+.carte_genre:nth-child(4n+1) { color: #f0884a; }
+.carte_genre:nth-child(4n+2) { color: #1a1a8c; }
+.carte_genre:nth-child(4n+3) { color: #e0408c; }
+.carte_genre:nth-child(4n+4) { color: #f5f06a; }
+
+.carte_metier:nth-child(4n+1) { color: #1a237e; }
+.carte_metier:nth-child(4n+2) { color: #c026d3; }
+.carte_metier:nth-child(4n+3) { color: #3b82f6; }
+.carte_metier:nth-child(4n+4) { color: #7ee07a; }
+
+/* =========================================
+   4. MAP INTERACTIVE
+========================================= */
+#map {
+    margin-bottom: 0;
+    padding: 0 var(--page-padding) var(--space-lg); 
+    background-color: var(--bg-color);
+}
+
+
+#map svg {
+    display: block;
+    width: min(100%, 650px);
+    max-height: 450px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.canton-shape {
+    fill: #000;
+    stroke: #EAE6DC;
+    stroke-width: 0.8442;
+    cursor: pointer;
+    transition: fill 0.2s ease;
+}
+
+#map a:hover .canton-shape,
+#map a:focus .canton-shape {
+    fill: var(--purple-hover);
+}
+
+.canton-contour {
+    fill: none;
+    stroke: #EAE6DC;
+    stroke-width: 0.8442;
+    pointer-events: none;
+}
+
+/* =========================================
+   5. AJUSTEMENT FOOTER SUR L'ACCUEIL
+========================================= */
+.site-footer {
+    margin-top: 0;
+}
+
+/* =========================================
+   6. RESPONSIVE
+========================================= */
+@media (max-width: 700px) {
+    .hero {
+        min-height: 360px;
+    }
+
+    .hero p br {
+        display: none;
+    }
+
+    .carte_genre,
+    .carte_metier {
+        flex-basis: 150px;
+        height: 150px;
+        font-size: 26px;
+    }
+}
+

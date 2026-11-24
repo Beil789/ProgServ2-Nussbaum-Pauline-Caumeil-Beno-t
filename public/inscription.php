@@ -54,6 +54,7 @@ if (strlen($username) < 2 || strlen($username) > 30) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S'inscrire - Le Scope</title>
  <link rel="stylesheet" href="css/styles.css">
+ <link rel="stylesheet" href="css/inscriptionstyle.css">
 </head>
 <body>
  <?php include 'view/headerViewer.php'; ?>

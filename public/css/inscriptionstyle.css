@@ -1,0 +1,115 @@
+
+/* Centre la carte entre le header et le footer */
+.auth-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg) var(--space-md);
+}
+
+/* Carte sombre arrondie */
+.auth-card {
+    width: 100%;
+    max-width: 680px;
+    padding: 36px 48px 48px;
+    border-radius: 24px;
+    background-color: var(--card-bg);
+}
+
+/* ---------- En-tête (flèche au-dessus du titre) ---------- */
+.auth-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.back-btn {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--text-main);
+    transition: transform var(--transition), color var(--transition);
+}
+
+.back-btn:hover {
+    color: var(--teal);
+    transform: translateX(-4px);
+}
+
+.auth-title {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* ---------- Ajustements formulaire ---------- */
+.auth-card .form-control {
+    padding: 16px 24px;
+    margin-bottom: 22px;
+}
+
+.auth-card button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: var(--space-xs);
+    padding: 14px 20px;
+    border-radius: var(--radius-pill);
+    background-color: var(--teal);
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.auth-card button[type="submit"]:hover {
+    background-color: var(--teal-hover);
+}
+/* ---------- Messages d'erreur / succès PHP ---------- */
+.alert {
+    padding: 12px 18px;
+    margin-bottom: var(--space-md);
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+}
+
+.alert p {
+    color: inherit;
+    font-size: 14px;
+}
+
+.alert p + p {
+    margin-top: 6px;
+}
+
+.alert-danger {
+    color: var(--error-color);
+    background-color: rgba(255, 107, 107, 0.12);
+    border-color: rgba(255, 107, 107, 0.4);
+}
+
+.alert-success {
+    color: var(--success-color);
+    background-color: rgba(81, 207, 102, 0.12);
+    border-color: rgba(81, 207, 102, 0.4);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 700px) {
+    .auth-card {
+        padding: 28px 20px 32px;
+        border-radius: var(--radius-md);
+    }
+
+    .auth-title {
+        font-size: 26px;
+    }
+
+    .auth-card button[type="submit"] {
+        font-size: 17px;
+    }
+}

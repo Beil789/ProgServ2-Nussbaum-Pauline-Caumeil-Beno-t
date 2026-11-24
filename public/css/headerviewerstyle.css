@@ -1,0 +1,100 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    min-height: 80px;
+    padding: 12px var(--page-padding);
+    background-color: var(--bg-color);
+}
+
+/* ---------- Logo ---------- */
+.header-logo .logo-text {
+    color: var(--text-main);
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+}
+
+/* ---------- Navigation ---------- */
+.header-nav {
+    flex: 1;
+}
+
+.header-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: clamp(20px, 5vw, 60px);
+    max-width: 640px;
+    margin-inline: auto;
+}
+
+.header-nav a {
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 400;
+    transition: color var(--transition);
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible {
+    color: var(--purple-hover);
+}
+
+/* Page courante (ajouter aria-current="page" sur le lien concerné) */
+.header-nav a[aria-current="page"] {
+    color: var(--purple-hover);
+}
+
+/* ---------- Bouton "Se connecter" ---------- */
+.header-auth {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.header-auth .btn-connect {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 20px;
+    background-color: var(--purple);
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: background-color var(--transition);
+}
+
+.header-auth .btn-connect:hover,
+.header-auth .btn-connect:focus-visible {
+    background-color: var(--purple-hover);
+    color: var(--text-main);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 800px) {
+    .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Le menu passe sous le logo et le bouton */
+    .header-nav {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .header-nav ul {
+        max-width: none;
+        justify-content: space-between;
+        gap: var(--space-sm);
+    }
+
+    .header-nav a {
+        font-size: 16px;
+    }
+}

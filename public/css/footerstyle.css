@@ -1,0 +1,61 @@
+
+.site-footer {
+    /* Bande noire sous le cadre, comme sur la maquette */
+    padding-bottom: 28px;
+    margin-top: var(--space-lg);
+    background-color: var(--bg-color);
+}
+
+/* Cadre avec ligne fine en haut et en bas */
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    min-height: 108px;
+    padding: 0 var(--page-padding);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.footer-content p {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/* Sélecteur de langue : FR/EN */
+.lang-switch {
+    flex-shrink: 0;
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.lang-switch a {
+    transition: color var(--transition);
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible {
+    color: var(--purple-hover);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 700px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: var(--space-xs);
+        padding-block: var(--space-md);
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+}
