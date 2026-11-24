@@ -5,7 +5,7 @@ class User {
     private string $username;
     private string $email;
     private string $mot_de_passe;
-    private int $id_role = 1;
+    private int $id_role = 2;
 
     public function __construct(array $data = []) {
         if (!empty($data)) {
@@ -14,7 +14,7 @@ class User {
     }
 
     public function hydrate(array $data): void {
-        if (isset($data['id_user'])) $this->setIdUser((int) $data['id_user']);
+        if (isset($data['id'])) $this->setIdUser((int) $data['id']);
         if (isset($data['username'])) $this->setUsername($data['username']);
         if (isset($data['email'])) $this->setEmail($data['email']);
         if (isset($data['mot_de_passe'])) $this->setMotDePasse($data['mot_de_passe']);

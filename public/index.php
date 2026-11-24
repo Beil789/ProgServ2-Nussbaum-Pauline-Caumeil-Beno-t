@@ -4,12 +4,12 @@ $config = parse_ini_file(__DIR__ . '/../src/config/database.ini');
 $dsn = "mysql:host=" . $config['host'] . ";port=" . $config['port'] . ";dbname=" . $config['database'] . ";charset=utf8mb4";
 $pdo = new PDO($dsn, $config['username'], $config['password']);
 
-require_once 'modele/GestionnaireBD.php';
+require_once __DIR__ . '/../src/config/database.php';
+require_once __DIR__ . '/../src/repositories/ReferenceRepository.php';
 
-// Instanciation du gestionnaire et récupération des données
-$gestionnaire = new GestionnaireBD($pdo);
-$genres = $gestionnaire->getGenres();
-$metiers = $gestionnaire->getMetiers();
+$refRepo = new ReferenceRepository($bdd);
+$genres  = $refRepo->getGenres();
+$metiers = $refRepo->getMetiers();
 ?>
 
 <!DOCTYPE html>

@@ -11,7 +11,7 @@ class Canton {
     }
 
     public function hydrate(array $data): void {
-        if (isset($data['id_canton'])) $this->setIdCanton((int) $data['id_canton']);
+        if (isset($data['id'])) $this->setIdCanton((int) $data['id']);
         if (isset($data['nom'])) $this->setNom($data['nom']);
     }
 
