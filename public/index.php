@@ -1,5 +1,7 @@
 <?php
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $config = parse_ini_file(__DIR__ . '/../src/config/database.ini');
 $dsn = "mysql:host=" . $config['host'] . ";port=" . $config['port'] . ";dbname=" . $config['database'] . ";charset=utf8mb4";
 $pdo = new PDO($dsn, $config['username'], $config['password']);
@@ -22,7 +24,7 @@ $metiers = $refRepo->getMetiers();
     <link rel="stylesheet" href="css/accueilstyle.css">
 </head>
 <body>
-    <?php include 'view/headerViewer.php'; ?>
+    <?php include 'view/header.php'; ?>
     
     <main>
         <div class="hero">

@@ -1,0 +1,145 @@
+.auth-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg) var(--space-md);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 680px;
+    padding: 36px 48px 48px;
+    border-radius: 24px;
+    background-color: var(--card-bg);
+}
+
+.auth-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.back-btn {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--text-main);
+    transition: transform var(--transition), color var(--transition);
+}
+
+.back-btn:hover {
+    color: var(--teal);
+    transform: translateX(-4px);
+}
+
+.auth-title {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.auth-card .form-control {
+    padding: 16px 24px;
+    margin-bottom: 22px;
+}
+
+.auth-card .btn-teal,
+.auth-card .btn-pink {
+    color: var(--text-main);
+    font-weight: 800;
+}
+
+.auth-card .btn-block {
+    padding: 14px 20px;
+    font-size: 20px;
+}
+
+.auth-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-xs);
+}
+
+.auth-submit {
+    min-width: 190px;
+    padding: 12px 36px;
+    border-radius: var(--radius-pill);
+    font-size: 18px;
+}
+
+
+.auth-register {
+    margin-top: 52px;
+}
+
+.alert {
+    padding: 12px 18px;
+    margin-bottom: var(--space-md);
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+}
+
+.alert p {
+    color: inherit;
+    font-size: 14px;
+}
+
+.alert p + p {
+    margin-top: 6px;
+}
+
+.alert-danger {
+    color: var(--error-color);
+    background-color: rgba(255, 107, 107, 0.12);
+    border-color: rgba(255, 107, 107, 0.4);
+}
+
+.alert-success {
+    color: var(--success-color);
+    background-color: rgba(81, 207, 102, 0.12);
+    border-color: rgba(81, 207, 102, 0.4);
+}
+
+.alert a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.alert-link {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.alert-link:hover {
+    opacity: 0.8;
+}
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 700px) {
+    .auth-card {
+        padding: 28px 20px 32px;
+        border-radius: var(--radius-md);
+    }
+
+    .auth-title {
+        font-size: 26px;
+    }
+
+    .auth-submit {
+        width: 100%;
+    }
+
+    .auth-card .btn-block,
+    .auth-submit {
+        font-size: 17px;
+    }
+
+    .auth-register {
+        margin-top: 32px;
+    }
+}

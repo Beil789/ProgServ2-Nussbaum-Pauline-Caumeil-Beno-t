@@ -85,4 +85,19 @@ class UserRepository {
 
         return $stmt->fetchColumn() !== false;
     }
+
+    /**
+ * Récupère un utilisateur par son email OU son nom d'utilisateur (pour connexion.php).
+ */
+public function findByIdentifiant(string $identifiant): ?User {
+    $sql = "SELECT * FROM utilisateur WHERE email = :email OR username = :username LIMIT 1";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute([
+        ':email'    => $identifiant,
+        ':username' => $identifiant,
+    ]);
+
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $data ? new User($data) : null;
+}
 }

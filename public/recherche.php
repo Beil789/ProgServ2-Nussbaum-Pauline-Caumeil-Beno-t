@@ -1,5 +1,7 @@
 <?php
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once __DIR__ . '/../src/repositories/ReferenceRepository.php';
 require_once __DIR__ . '/../src/repositories/ArtisteRepository.php';
 
@@ -94,7 +96,7 @@ $genreLabels = [
      <script type="module" src="js/recherche.js"></script>
 </head>
 <body>
- <?php include 'view/headerViewer.php'; ?>
+ <?php include 'view/header.php'; ?>
 
     <main>
         <form class="search-form" method="get" action="recherche.php">
