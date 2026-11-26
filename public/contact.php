@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,7 +13,7 @@
     <link rel="stylesheet" href="css/contactstyle.css">
 </head>
 <body>
-    <?php include 'view/headerViewer.php'; ?>
+    <?php include 'view/header.php'; ?>
 
     <main class="main-container">
         

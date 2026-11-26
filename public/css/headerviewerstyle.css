@@ -73,6 +73,58 @@
     color: var(--text-main);
 }
 
+/* Lien "Mes favoris" en jaune */
+.header-nav a.nav-favoris {
+    color: #e6e23a;
+}
+
+.header-nav a.nav-favoris:hover {
+    opacity: 0.8;
+}
+
+/* Zone droite (pseudo + bouton déconnexion) */
+.header-auth {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Pseudo en rose */
+.header-username {
+    color: var(--pink, #d896d6);
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.header-username:hover {
+    opacity: 0.8;
+}
+
+/* Bouton déconnexion violet (rectangle arrondi) */
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 44px;
+    border-radius: 14px;
+    background-color: var(--purple, #6f4e9c);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: var(--purple-hover, #5d3f87);
+    transform: translateY(-1px);
+}
+
+.btn-logout img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}
+
 /* =========================================
    RESPONSIVE
 ========================================= */

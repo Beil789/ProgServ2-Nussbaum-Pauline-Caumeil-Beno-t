@@ -205,6 +205,17 @@ section h2 {
     border-radius: var(--radius-pill);
     font-size: 18px;
 }
+.btn-teal {
+    background-color: var(--teal);
+    color: var(--text-main);
+    border: none;
+    cursor: pointer;
+    transition: filter var(--transition);
+}
+
+.btn-teal:hover {
+    filter: brightness(0.9);
+}
 
 /* =========================================
    6. FORMULAIRES

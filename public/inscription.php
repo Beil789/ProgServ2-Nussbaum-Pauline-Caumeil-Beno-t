@@ -5,7 +5,7 @@ require_once '../src/repositories/UserRepository.php';
 
 $userRepo = new UserRepository($bdd);
 $erreurs = [];
-$messageSucces = "";
+$inscriptionReussie = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
@@ -42,12 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
 
         $newId = $userRepo->create($nouvelUser);
-
-        if ($newId > 0) {
-            $messageSucces = "Compte créé avec succès ! Vous pouvez maintenant vous connecter.";
-        } else {
-            $erreurs[] = "Une erreur est survenue lors de la création du compte.";
-        }
+if ($newId > 0) {
+    $inscriptionReussie = true;
+    $username = '';
+    $email = '';
+} else {
+    $erreurs[] = "Une erreur est survenue lors de la création du compte.";
+}
     }
 }
 ?>
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  <link rel="stylesheet" href="css/inscriptionstyle.css">
 </head>
 <body>
- <?php include 'view/headerViewer.php'; ?>
+ <?php include 'view/header.php'; ?>
 
     <div class="auth-container">
         <div class="auth-card">
@@ -82,11 +83,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             <?php endif; ?>
 
-            <?php if (!empty($messageSucces)): ?>
-                <div class="alert alert-success">
-                    <p><?= $messageSucces ?></p>
-                </div>
-            <?php endif; ?>
+      <?php if ($inscriptionReussie): ?>
+    <div class="alert alert-success" role="status">
+        <p>
+            Compte créé avec succès ! Vous pouvez maintenant vous connecter
+            <a href="connexion.php"> en cliquant ici</a>.
+        </p>
+    </div>
+<?php endif; ?>
 
      
             <form action="inscription.php" method="POST">
